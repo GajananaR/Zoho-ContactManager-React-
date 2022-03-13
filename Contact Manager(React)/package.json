@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "start_frontend": "env-cmd  -f .env yarn --cwd ./frontend/ start",
+    "start_backend": "yarn --cwd ./backend/ start",
+    "start": "concurrently 'yarn start_frontend' 'yarn start_backend' ",
+    "start_exp": "concurrently 'yarn --cwd ./backend/ dev_exp' 'yarn --cwd ./frontend/ start' ",
+    "install": "yarn --cwd ./backend/ install && yarn --cwd ./frontend/ install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "dotenv": "^16.0.0",
+    "env-cmd": "^10.1.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "name": "node_sql_and_jwt_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/brguru90/node-sql-and-jwt-demo.git",
+  "author": "Guruprasad BR <brguru90@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pm2": "^5.1.2"
+  }
+}
